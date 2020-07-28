@@ -12,7 +12,7 @@ Colors:
 Fonts: Montserrat
 
 Table OF Contents
-------------------------------------
+-----------------------------------
 1 > GENERAL
 ------ Typography
 ------ Buttons
@@ -2052,7 +2052,7 @@ textarea.input {
 }
 
 .footer-payments li a {
-  color: #15161D;
+  /* color: #15161D; */
   font-size: 36px;
   display: block;
 }
