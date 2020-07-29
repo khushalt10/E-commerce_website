@@ -87,7 +87,8 @@
                 <div class="col-md-6">
                   <button class="btn btn-outline-primary btn-sm btn-block" name="button"
                     [class.disabled]="p.quantity < 1"
-                    [class.btn-outline-danger]="p.quantity < 1">
+                    [class.btn-outline-danger]="p.quantity < 1"
+                    (click)="AddToCart(p.id)">
                     {{p.quantity < 1 ? "NO STOCK" : "ADD TO CART"}}
                   </button>
 

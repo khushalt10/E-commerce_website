@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-// import { HttpClient } from '@angular/common/http';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { ToastrModule } from "ngx-toastr";// import { HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +29,9 @@ import { ThankyouComponent } from './components/thankyou/thankyou.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule    // HttpClient
+    AppRoutingModule,
+    NgxSpinnerModule,
+    ToastrModule.forRoot()    // HttpClient
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,13 +16,14 @@ export class OrderService {
     return this.http.get<ProductResponseModel>(this.SERVER_URL + '/orders' + orderId).toPromise();
   }
 
-  interface ProductResponseModel {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-    quantityOrdered: number;
-    image: string;
-  }
 
+
+}
+interface ProductResponseModel {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  quantityOrdered: number;
+  image: string;
 }
