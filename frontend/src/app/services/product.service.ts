@@ -31,7 +31,7 @@ export class ProductService {
   }
 
   //get product from one category
-  getProductFromCategory(carName: string): Observable<ProductModelServer[]> {
+  getProductFromCategory(catName: string): Observable<ProductModelServer[]> {
     return this.http.get<ProductModelServer[]>(this.SERVER_URL + '/products/category/' + catName);
   }
 
