@@ -226,14 +226,14 @@ export class CartService {
 
   CheckoutFromCart(userId: number) {
 
-    this.httpClient.post(`${this.ServerURL}orders/payment`, null).subscribe((res: { success: Boolean }) => {
+    this.httpClient.post(`${this.ServerURL}/orders/payment`, null).subscribe((res: { success: Boolean }) => {
       console.clear();
 
       if (res.success) {
 
 
         this.resetServerData();
-        this.httpClient.post(`${this.ServerURL}orders/new`, {
+        this.httpClient.post(`${this.ServerURL}/orders/new`, {
           userId: userId,
           products: this.cartDataClient.prodData
         }).subscribe((data: OrderConfirmationResponse) => {
@@ -248,7 +248,7 @@ export class CartService {
                   total: this.cartDataClient.total
                 }
               };
-              this.spinner.hide();
+             this.spinner.hide();
               this.router.navigate(['/thankyou'], navigationExtras).then(p => {
                 this.cartDataClient = {prodData: [{incart: 0, id: 0}], total: 0};
                 this.cartTotal$.next(0);
@@ -259,7 +259,7 @@ export class CartService {
 
         })
       } else {
-        this.spinner.hide();
+      this.spinner.hide();
         this.router.navigateByUrl('/checkout').then();
         this.toast.error(`Sorry, failed to book the order`, "Order Status", {
           timeOut: 1500,
