@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~9.0.6",
     "@angular/platform-browser-dynamic": "~9.0.6",
     "@angular/router": "~9.0.6",
+    "angularx-social-login": "^3.2.1",
     "ngx-spinner": "^10.0.1",
     "ngx-toastr": "^13.0.0",
     "rxjs": "~6.5.4",
