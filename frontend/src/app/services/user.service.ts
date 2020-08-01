@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { AuthService, SocialUser } from "angularx-social-login";
+import { SocialAuthService, SocialUser } from "angularx-social-login";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "../../environments/environment";
 import { BehaviorSubject } from "rxjs";
-import { AuthServiceConfig, GoogleLoginProvider, SocialLoginModule } from "angularx-social-login";
+import { SocialAuthServiceConfig, GoogleLoginProvider, SocialLoginModule } from "angularx-social-login";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class UserService {
   userData$ = new BehaviorSubject<SocialUser | ResponseModel>(null);
 
 
-  constructor(private authService: AuthService,
+  constructor(private authService: SocialAuthService,
     private httpClient: HttpClient) {
 
       authService.authState.subscribe((user: SocialUser) => {
@@ -49,7 +49,7 @@ export class UserService {
   }
 }
 
-interface ResponseModel {
+export interface ResponseModel {
   token: string;
   auth: boolean;
   email: string;

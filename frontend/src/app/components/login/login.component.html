@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-6 d-flex mx-auto flex-column">
+        <form novalidate #myform="ngForm">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control" id="email" [(ngModel)]="email" placeholder="Your Email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" id="password" [(ngModel)]="password" placeholder="Password" required>
+          </div>
+          <div class="d-flex flex-column align-items-center justify-content-around">
+            <button type="button" class="btn btn-primary btn-sm btn-block" (click)="login(myform)"
+            [disabled]="myform.invalid && myform.touched"  name="button">Log In</button>
+            <hr>
+            <h4 class="text-uppercase"><strong>Login Using</strong></h4>
+
+            <button class="btn btn-danger btn-sm btn-block mt-4" (click)="signInWithGoogle()" name="button">
+            <span><i class="fa fa-google"></i> Google </span></button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
